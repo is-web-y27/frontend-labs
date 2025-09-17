@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru" id="top">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Квантик — научно-популярный журнал</title>
+    <meta name="description" content="Научно-популярный онлайн-журнал: статьи, заметки, интервью с учёными, эксперименты." />
+    <meta name="keywords" content="наука, журнал, статьи, физика, биология, космос, технологии" />
+    <link rel="preload" href="images/logo.jpg" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+    <noscript><style>.js-only{display:none!important}</style></noscript>
+</head>
+<body>
+
+<header class="site-header" role="banner">
+    <div class="logo-block">
+        <a href="/" aria-label="Квантик — на главную">
+            <img src="images/logo.jpg" alt="Логотип журнала «Квантик»" />
+        </a>
+        <h1>Квантик — научно-популярный журнал</h1>
+    </div>
+
+    <nav aria-label="Основная навигация">
+        <ul>
+            <li><a href="#latest">Статьи</a></li>
+            <li><a href="#topics">Темы</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#news">Лента</a></li>
+            <li><a href="#table">Таблица</a></li>
+            <li><a href="#snippet">Код</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="latest" aria-labelledby="latest-heading">
+        <h2 id="latest-heading">Свежие статьи</h2>
+        <article>
+            <h3>Почему небо голубое?</h3>
+            <p><time datetime="2025-09-01">1 сентября 2025</time> • 7 минут чтения</p>
+            <p>Небо голубое из-за <em>рассеяния Рэлея</em>: короткие волны рассеиваются сильнее.
+                Поэтому <strong>синий побеждает</strong>.</p>
+            <p>Раньше считалось, что фиолетовый «должен» быть сильнее. Это <del>истина</del> <ins>упрощение</ins>.</p>
+            <footer>Автор: <cite>Н. П. Резонанс</cite></footer>
+        </article>
+        <article>
+            <h3>Как «слышит» ИИ</h3>
+            <p><time datetime="2025-08-20">20 августа 2025</time> • 6 минут чтения</p>
+            <p>Краткий разбор спектрограмм и свёрточных сетей на примере распознавания речи.</p>
+            <footer>Автор: <cite>А. Мел</cite></footer>
+        </article>
+    </section>
+
+    <aside aria-labelledby="aside-heading">
+        <h2 id="aside-heading">Боковая колонка</h2>
+        <p>Короткие заметки, ссылки и подписка.</p>
+        <form id="subscribeForm" action="#" method="post" novalidate>
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" placeholder="Иван" autocomplete="name" required />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <button type="submit">Подписаться</button>
+            <p id="formStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+        </form>
+    </aside>
+</main>
+
+<section id="topics" class="section-pad">
+    <h2>Темы журнала</h2>
+    <ul class="topics-tags">
+        <li>Физика</li><li>Космос</li><li>Биология</li><li>Математика</li><li>Технологии</li>
+    </ul>
+</section>
+
+<section id="gallery" class="section-pad">
+    <h2>Галерея иллюстраций</h2>
+    <div class="gallery-grid">
+        <figure><img src="https://picsum.photos/seed/kv1/640/400" alt="Абстрактная иллюстрация 1"><figcaption>Мастерская</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/kv2/640/400" alt="Абстрактная иллюстрация 2"><figcaption>Животные</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/kv3/640/400" alt="Абстрактная иллюстрация 3"><figcaption>Горы</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/kv4/640/400" alt="Абстрактная иллюстрация 4"><figcaption>Леса</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/kv5/640/400" alt="Абстрактная иллюстрация 5"><figcaption>Поля</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/kv6/640/400" alt="Абстрактная иллюстрация 6"><figcaption>Путешествия</figcaption></figure>
+    </div>
+</section>
+
+<section id="news" class="section-pad">
+    <h2>Лента новостей</h2>
+    <div class="news-grid">
+        <article class="card">
+            <h3>Телескоп записал всплеск FRB</h3>
+            <p>Новая серия быстрых радиовсплесков удивила астрономов стабильностью периода.</p>
+            <a href="#">Читать</a>
+        </article>
+        <article class="card">
+            <h3>Учёные «подкрутили» фотосинтез</h3>
+            <p>Генная модификация повысила эффективность на 12% в тепличных условиях.</p>
+            <a href="#">Читать</a>
+        </article>
+        <article class="card">
+            <h3>Робопчёлы для опыления</h3>
+            <p>Мини-дроны учатся обходить препятствия и не мешать настоящим пчёлам.</p>
+            <a href="#">Читать</a>
+        </article>
+        <article class="card">
+            <h3>Квантовый интернет-узел</h3>
+            <p>Демонстрация ретранслятора с памятью на центрах азота в алмазе.</p>
+            <a href="#">Читать</a>
+        </article>
+    </div>
+</section>
+
+<section id="snippet" class="section-pad">
+    <h2>Пример Случайного события</h2>
+    <pre aria-label="Псевдокод"><code>// Псевдокод: случайный распад
+let steps = 0;
+while (Math.random() &gt; 0.1) {
+  steps++;
+}
+console.log("Событие случилось на шаге: " + steps);</code></pre>
+
+    <div class="demo js-only">
+        <button id="runDemo" type="button">Запустить симуляцию</button>
+        <output id="demoOut" aria-live="polite" role="status">Ещё не запускали.</output>
+    </div>
+</section>
+
+<section id="table" class="section-pad">
+    <h2>Таблица показателей</h2>
+
+    <table class="responsive-table">
+        <caption>Гипотетическая статистика статей</caption>
+        <thead>
+        <tr>
+            <th>Раздел</th>
+            <th>Статьи</th>
+            <th>Средн. чтение</th>
+            <th>Лайки</th>
+            <th>Комментарии</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Физика</td><td>42</td><td>6 мин</td><td>340</td><td>13</td>
+        </tr>
+        <tr>
+            <td>Космос</td><td>28</td><td>7 мин</td><td>875</td><td>90</td>
+        </tr>
+        <tr>
+            <td>Биология</td><td>31</td><td>5 мин</td><td>520</td><td>22</td>
+        </tr>
+        <tr>
+            <td>Технологии</td><td>37</td><td>8 мин</td><td>204</td><td>18</td>
+        </tr>
+        <tr>
+            <td>Математика</td><td>18</td><td>9 мин</td><td>301</td>432</td><td>54</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="about" class="section-pad">
+    <h2>О нас</h2>
+    <p><em>Квантик</em> — это площадка для тех, кто любит ясные объяснения сложных вещей.</p>
+</section>
+
+<footer id="contacts">
+    <h2>Контакты</h2>
+    <address>
+        Редакция «Квантик»<br />
+        ул. Академическая, д. 1, Новосибирск, Россия<br />
+        Email: <a href="mailto:hello@kvantik.example">hello@kvantik.example</a><br />
+        Тел.: +7 (999) 123-45-67
+    </address>
+    <p>Координаты: 55.0302 N, 82.9204 E</p>
+
+    <div class="footer-banner" aria-label="Реклама">
+        <p>Рекламный баннер • Спонсор выпуска</p>
+    </div>
+
+    <p>&copy; <time datetime="2025">2025</time> «Квантик». Все права защищены.</p>
+    <nav aria-label="Навигация подвала">
+        <ul>
+            <li><a href="#top">Наверх</a></li>
+            <li><a href="#about">О проекте</a></li>
+            <li><a href="#topics">Темы</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<button id="chatFab" class="chat-fab js-only" aria-controls="chatBox" aria-expanded="false">Чат</button>
+<div id="chatBox" class="chat-box js-only" hidden>
+    <div class="chat-head">
+        <strong>Онлайн-чат</strong>
+        <button id="chatClose" aria-label="Закрыть чат">×</button>
+    </div>
+    <div class="chat-body" role="log" aria-live="polite">Здравствуйте! Чем помочь?</div>
+    <form id="chatForm">
+        <label class="visually-hidden" for="chatInput">Сообщение</label>
+        <input id="chatInput" placeholder="Напишите сообщение…" />
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+<script src="index.js" defer></script>
+</body>
+</html>
