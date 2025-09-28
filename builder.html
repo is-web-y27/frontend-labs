@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Квантик — Конструктор расписания</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/site.js" defer></script>
+    <script src="js/builder.js" defer></script>
+</head>
+<body>
+<header class="site-header" role="banner">
+    <div class="logo-block">
+        <a href="index.html"><img src="images/logo.jpg" alt="Логотип журнала «Квантик»" /></a>
+        <h1>Квантик — научно-популярный журнал</h1>
+    </div>
+    <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+            <li><a href="articles.html" data-page="articles">Статьи</a></li>
+            <li><a href="topics.html"   data-page="topics">Темы</a></li>
+            <li><a href="gallery.html"  data-page="gallery">Галерея</a></li>
+            <li><a href="news.html"     data-page="news">Лента</a></li>
+            <li><a href="table.html"    data-page="table">Таблица</a></li>
+            <li><a href="code.html"     data-page="code">Код</a></li>
+            <li><a href="builder.html"  data-page="builder">Конструктор</a></li>
+            <li><a href="about.html"    data-page="about">О нас</a></li>
+            <li><a href="contacts.html" data-page="contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="section-pad page-news">
+    <h2>Конструктор расписания</h2>
+
+    <section class="card">
+        <form id="builderForm" class="builder-form" novalidate>
+            <label>Язык интерфейса
+                <select name="lang" id="lang">
+                    <option value="ru" selected>Русский</option>
+                    <option value="en">English</option>
+                </select>
+            </label>
+
+            <label>Учебная неделя
+                <select name="days" id="days">
+                    <option value="5">5 дней (пн–пт)</option>
+                    <option value="6">6 дней (пн–сб)</option>
+                </select>
+            </label>
+
+            <label>Макс. занятий в день
+                <input type="number" name="lessons" id="lessons" min="1" max="12" value="6" />
+            </label>
+
+            <label>Начало первой пары
+                <input type="time" name="start" id="start" value="08:30" />
+            </label>
+
+            <label>Длительность занятия (мин)
+                <input type="number" name="dur" id="dur" min="20" max="240" value="90" />
+            </label>
+
+            <label>Перерыв между занятиями (мин)
+                <input type="number" name="gap" id="gap" min="0" max="120" value="10" />
+            </label>
+
+            <div class="builder-actions">
+                <button type="submit">Сгенерировать</button>
+                <button type="button" id="savePreset">Сохранить параметры</button>
+                <button type="button" id="loadPreset">Загрузить параметры</button>
+                <button type="button" id="clearPreset">Сбросить</button>
+            </div>
+
+            <p id="builderStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <!-- Результат генерации -->
+    <section class="card">
+        <h3 id="resultTitle">Расписание</h3>
+        <div id="builderResult" class="days-grid" aria-live="polite"></div>
+    </section>
+</main>
+
+<footer id="contacts">
+    <h2>Контакты</h2>
+    <address>Редакция «Квантик», hello@kvantik.example</address>
+    <p>&copy; <time datetime="2025">2025</time> «Квантик»</p>
+</footer>
+</body>
+</html>

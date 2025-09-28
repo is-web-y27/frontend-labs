@@ -22,7 +22,7 @@ img{max-width:100%; height:auto}
     overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
 }
 
-/* Шапка — (sticky) */
+/* Шапка (sticky) */
 header.site-header{
     position:sticky; top:0; z-index:50;
     background:linear-gradient(to right,var(--header-grad-a),var(--header-grad-b));
@@ -31,13 +31,30 @@ header.site-header{
 .logo-block{display:flex; align-items:center; gap:1rem}
 .logo-block img{height:60px}
 header h1{font-size:1.8rem; margin:0}
-header nav ul{
+.main-nav ul{
     list-style:none; padding:0; margin:1rem 0 0;
     display:flex; gap:1rem; flex-wrap:wrap
 }
-header nav a{color:#fff; font-weight:bold}
+.main-nav a{
+    color:#fff; font-weight:700; padding:.25rem .5rem; border-radius:6px;
+    transition:background-color .15s ease, color .15s ease, box-shadow .15s ease;
+    outline:none;
+}
+.main-nav a.hover,
+.main-nav a:hover{
+    background:rgba(255,255,255,.14);
+    box-shadow:0 0 0 2px rgba(255,255,255,.25) inset;
+    text-decoration:none;
+}
+.main-nav a:focus-visible{
+    box-shadow:0 0 0 3px #fff, 0 0 0 6px rgba(255,255,255,.35);
+}
+.main-nav a.active{
+    background:#fff; color:#1e3c72;
+    box-shadow:0 0 0 2px #fff inset;
+}
 
-/* Контентная сетка */
+/* Контент */
 main{
     display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:2rem;
 }
@@ -45,8 +62,6 @@ section, article, aside{
     background:var(--card-bg); padding:1rem 1.5rem; border-radius:8px; box-shadow:var(--shadow)
 }
 article+article{margin-top:1.5rem}
-
-/* Общие отступы секций */
 .section-pad{padding:2rem}
 
 /* Теги тем */
@@ -57,7 +72,7 @@ article+article{margin-top:1.5rem}
     background:var(--muted); border:1px solid #d4dbe6; padding:.35rem .6rem; border-radius:999px
 }
 
-/* Галерея (горизонтальные и вертикальные ряды) */
+/* Галерея */
 .gallery-grid{
     display:grid; gap:1rem;
     grid-template-columns:repeat(4, minmax(0,1fr));
@@ -65,23 +80,20 @@ article+article{margin-top:1.5rem}
 .gallery-grid figure{margin:0; background:#fff; border-radius:8px; overflow:hidden; box-shadow:var(--shadow)}
 .gallery-grid figcaption{padding:.5rem .75rem; font-size:.9rem; color:#555}
 
-/* Лента новостей  */
+/* Лента новостей */
 .news-grid{
     display:grid; gap:1rem; grid-template-columns:repeat(3, minmax(0,1fr));
 }
 .card{display:grid; gap:.5rem; border:1px solid #e5e7eb; border-radius:10px; padding:1rem; background:#fff}
 .card a{align-self:end; font-weight:600}
 
-/* Код и цитаты */
+/* Код */
 pre{
     background:#272822; color:#f8f8f2; padding:1rem; border-radius:6px; overflow-x:auto
 }
-blockquote{
-    border-left:4px solid var(--header-grad-b); margin:1rem 0; padding-left:1rem; font-style:italic; color:#555
-}
 
 /* Форма */
-form input, form button{
+form input, form button, form textarea, form select{
     width:100%; padding:.5rem; margin-top:.5rem; border:1px solid #ccc; border-radius:4px; font-size:1rem
 }
 form button{background:var(--header-grad-b); color:#fff; border:none; cursor:pointer}
@@ -94,12 +106,9 @@ form button:hover{background:var(--header-grad-a)}
     border-radius:8px;
     overflow:hidden;
 
-    /* количество колонок */
     display:grid;
     grid-template-columns: 2fr repeat(4, minmax(110px, 1fr));
 }
-
-/* растянуть caption на всю сетку */
 .responsive-table caption{
     grid-column: 1 / -1;
     padding:.75rem 1rem;
@@ -107,7 +116,6 @@ form button:hover{background:var(--header-grad-a)}
     text-align:left;
     background:#e9eef8;
 }
-/* Разворачиваем структуры строк в ячейки грида */
 .responsive-table thead, .responsive-table tbody, .responsive-table tr{display:contents}
 .responsive-table th, .responsive-table td{
     padding:.75rem 1rem; border-bottom:1px solid #eef0f3
@@ -115,7 +123,6 @@ form button:hover{background:var(--header-grad-a)}
 .responsive-table thead th{
     position:sticky; top:0; background:#f0f4ff; z-index:1
 }
-/* Зебра — чётные/нечётные строки */
 .responsive-table tbody tr:nth-child(even) td{background:var(--zebra)}
 .responsive-table tbody tr:hover td{background:#eef7ff}
 
@@ -128,77 +135,99 @@ footer nav ul{
     display:flex; justify-content:center; gap:1rem; list-style:none; padding:0; margin:1rem 0 0
 }
 
-/* Рекламный баннер (скрываем на маленьких экранах) */
 .footer-banner{
     margin:1rem auto 0; padding:1rem; border-radius:10px;
     background:linear-gradient(90deg,#ffd166,#ef476f); color:#111; font-weight:700; max-width:1200px
 }
 
-/* Демо */
-.demo{margin-top:1rem; display:grid; gap:.5rem}
-.demo button{
-    padding:.6rem .9rem; border-radius:6px; border:1px solid #cbd5e1; background:#fff; cursor:pointer; box-shadow:var(--shadow)
-}
-.demo button:hover{filter:brightness(.98)}
-.demo output{font-weight:600}
+.perf-info{ margin:1rem 0 0; font-size:.95rem; color:#bbb; }
+.perf-info strong{ color:#ffd166; }
 
-/* Плавающий чат (fixed) */
-.chat-fab{
-    position:fixed; right:16px; bottom:16px; z-index:60;
-    padding:.7rem 1rem; border-radius:999px; border:1px solid #cbd5e1; background:#fff; box-shadow:var(--shadow); cursor:pointer
-}
-.chat-box{
-    position:fixed; right:16px; bottom:76px; width:320px; max-width:90vw;
-    background:#fff; border:1px solid #e5e7eb; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.15)
-}
-.chat-head{display:flex; justify-content:space-between; align-items:center; padding:.6rem .9rem; background:#f7f7fb; border-bottom:1px solid #eceff4}
-.chat-head button{background:none; border:none; font-size:20px; cursor:pointer}
-.chat-body{padding:.8rem .9rem; height:160px; overflow:auto}
-#chatForm{display:grid; grid-template-columns:1fr auto; gap:.5rem; padding:.6rem .9rem; border-top:1px solid #eceff4}
-#chatForm input{margin:0}
-#chatForm button{margin:0}
+/* ===== Лента: форма комментариев, удаление, прелоадер, раскладка ===== */
+.page-news{ grid-template-columns: 1fr; }
 
-/* ====== МЕДИАЗАПРОСЫ ====== */
+.comment-form{
+    display:grid; grid-template-columns:1fr auto; gap:.75rem; align-items:end; margin-bottom:1rem;
+}
+.comment-form .full{ grid-column:1 / -1; }
+.comment-form textarea{ resize:vertical; }
 
-/* Смартфоны (≤ 480px) */
+.delete-btn{
+    margin-top:.25rem;
+    border:1px solid #f2a3a3;
+    background:#ffecec;
+    color:#9b1c1c;
+    border-radius:6px;
+    padding:.35rem .6rem;
+    cursor:pointer;
+}
+.delete-btn:hover{ background:#ffdede; }
+
+.preloader {
+    margin: 1rem 0;
+    width: 40px; height: 40px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #2a5298;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+
+/* ====== Медиа-запросы базовые ====== */
 @media (max-width:480px){
     main{grid-template-columns:1fr; padding:1rem}
     header h1{font-size:1.3rem}
     .gallery-grid{grid-template-columns:1fr}
     .news-grid{grid-template-columns:1fr}
     .responsive-table{grid-template-columns:1.5fr repeat(2, minmax(90px,1fr));}
-    /* прячем часть колонок таблицы на очень узких экранах */
     .responsive-table thead th:nth-child(4),
     .responsive-table thead th:nth-child(5),
     .responsive-table tbody td:nth-child(4),
     .responsive-table tbody td:nth-child(5){display:none}
-    .footer-banner{display:none} /* скрыть баннер */
+    .footer-banner{display:none}
 }
-
-/* Планшеты и ноутбуки (≤ 1024px) */
 @media (max-width:1024px){
     main{grid-template-columns:1fr}
     .gallery-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
     .news-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
 }
-
-/* Full HD и шире (≥ 1920px) */
 @media (min-width:1920px){
     .gallery-grid{grid-template-columns:repeat(5, minmax(0,1fr))}
     .news-grid{grid-template-columns:repeat(4, minmax(0,1fr))}
     .responsive-table{grid-template-columns: 2fr repeat(4, minmax(140px,1fr))}
 }
-
-/* WQHD (≥ 2560px) */
 @media (min-width:2560px){
     body{font-size:18px}
     .section-pad{padding:3rem}
     .gallery-grid{grid-template-columns:repeat(6, minmax(0,1fr))}
     .news-grid{grid-template-columns:repeat(5, minmax(0,1fr))}
 }
-
-/* Широкоформатные 21:9 */
 @media (min-aspect-ratio:21/9){
     .gallery-grid{grid-auto-rows:minmax(160px, auto)}
     .news-grid{grid-auto-rows:1fr}
+}
+
+/* ===== Айфоны и смартфоны среднего размера (350px – 600px) ===== */
+/* Этот блок идёт ПОСЛЕДНИМ, чтобы переопределить общие правила выше */
+@media (min-width:350px) and (max-width:600px){
+    main{ grid-template-columns:1fr; padding:1rem; }
+    header h1{ font-size:1.25rem; }
+    .logo-block img{ height:48px; }
+
+    /* На айфонах галерея лучше в 2 колонки, новости — по одной */
+    .gallery-grid{ grid-template-columns:repeat(2, 1fr); }
+    .news-grid{ grid-template-columns:1fr; }
+
+    /* Таблица — ужимаем, скрываем «тяжёлые» колонки */
+    .responsive-table{ grid-template-columns:1.2fr repeat(2, minmax(90px,1fr)); }
+    .responsive-table thead th:nth-child(4),
+    .responsive-table thead th:nth-child(5),
+    .responsive-table tbody td:nth-child(4),
+    .responsive-table tbody td:nth-child(5){ display:none; }
+
+    /* Баннер убираем, чтобы не занимал полэкрана */
+    .footer-banner{ display:none; }
+
+    /* Форма комментариев — одна колонка */
+    .comment-form{ grid-template-columns:1fr; }
 }

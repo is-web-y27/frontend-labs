@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ру">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Квантик — Лента новостей</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/site.js" defer></script>
+    <script src="js/api.js" defer></script>
+</head>
+<body>
+<header class="site-header" role="banner">
+    <div class="logo-block">
+        <a href="index.html"><img src="images/logo.jpg" alt="Логотип журнала «Квантик»" /></a>
+        <h1>Квантик — научно-популярный журнал</h1>
+    </div>
+    <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+            <li><a href="articles.html" data-page="articles">Статьи</a></li>
+            <li><a href="topics.html"   data-page="topics">Темы</a></li>
+            <li><a href="gallery.html"  data-page="gallery">Галерея</a></li>
+            <li><a href="news.html"     data-page="news">Лента</a></li>
+            <li><a href="table.html"    data-page="table">Таблица</a></li>
+            <li><a href="code.html"     data-page="snippet">Код</a></li>
+            <li><a href="builder.html"  data-page="builder">Конструктор</a></li>
+            <li><a href="about.html"    data-page="about">О нас</a></li>
+            <li><a href="contacts.html" data-page="contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="section-pad page-news">
+    <h2>Лента новостей</h2>
+
+    <!-- Форма для собственных комментариев -->
+    <section aria-labelledby="your-comments" class="card">
+        <h3 id="your-comments">Ваши комментарии</h3>
+        <form id="userCommentForm" class="comment-form" novalidate>
+            <div>
+                <label for="uc-name">Имя</label>
+                <input id="uc-name" name="name" type="text" placeholder="Как к вам обращаться" required />
+            </div>
+            <div class="full">
+                <label for="uc-body">Комментарий</label>
+                <textarea id="uc-body" name="body" rows="3" placeholder="Напишите комментарий…" required></textarea>
+            </div>
+            <button type="submit">Добавить</button>
+            <p id="userFormStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+        </form>
+
+        <!-- Uset comments (localStorage) -->
+        <div id="userList" class="news-grid"></div>
+    </section>
+
+    <section aria-labelledby="live-comments" class="card">
+        <h3 id="live-comments">Комментарии с JSONPlaceholder</h3>
+
+        <!-- Прелоадер -->
+        <div id="preloader" class="preloader"></div>
+
+        <!-- Контейнер для загруженных комментариев -->
+        <div id="commentList" class="news-grid"></div>
+
+        <p id="loadStatus" role="status" aria-live="polite"></p>
+    </section>
+</main>
+
+<footer id="contacts">
+    <h2>Контакты</h2>
+    <address>Редакция «Квантик», hello@kvantik.example</address>
+    <p>&copy; <time datetime="2025">2025</time> «Квантик»</p>
+</footer>
+</body>
+</html>
