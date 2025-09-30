@@ -1,8 +1,5 @@
 # Лабораторная работа 3. Адаптивная вёрстка
 
-> [!NOTE]
-> Может дополняться
-
 В этой лабораторной работе необходимо грамотно сверстать страницу, полученную в результате выполнения прошлых работ.
 
 Необходимо расположить все ранее описанные элементы вашего сайта в соответствии с макетом, используя [Flexbox](https://developer.mozilla.org/ru/docs/Learn_web_development/Core/CSS_layout/Flexbox) и/или [Grid](https://developer.mozilla.org/ru/docs/Learn_web_development/Core/CSS_layout/Grids), а также [медиазапросы CSS](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_media_queries/Using_media_queries).
